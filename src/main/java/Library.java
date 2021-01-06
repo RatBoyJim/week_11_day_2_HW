@@ -4,10 +4,12 @@ public class Library {
 
     private ArrayList<Book> bookList;
     private int capacity;
+    public String name;
 
-    public Library(int capacity){
+    public Library(int capacity, String name){
         this.bookList = new ArrayList<>();
         this.capacity = capacity;
+        this.name = name;
     }
 
     public int bookCount() {
@@ -32,4 +34,7 @@ public class Library {
     public Book removeBook(){
         return this.bookList.remove(0);
     }
+
 }
+
+

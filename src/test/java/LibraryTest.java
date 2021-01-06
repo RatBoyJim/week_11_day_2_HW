@@ -10,7 +10,7 @@ public class LibraryTest {
 
     @Before
     public void setUp(){
-        library = new Library(2);
+        library = new Library(2, "The Michael Anderson library for kids who don't know how to read as well as they should, and want to read better, and do other things better as well.");
         borrower = new Borrower("Andy");
     }
 
