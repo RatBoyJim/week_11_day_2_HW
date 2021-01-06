@@ -16,7 +16,11 @@ public class HashMapGenres {
         genres.put("Science Fiction", 1);
         genres.put("Poetry", 1);
 
+        System.out.println(genres.values());
+        System.out.println(genres.keySet());
         System.out.println(genres.get("Fiction"));
+        System.out.println(genres.get("Science Fiction"));
+        System.out.println(genres.get("Poetry"));
         System.out.println(library.name);
     }
 }
