@@ -9,11 +9,23 @@ public class LibraryTest {
 
     @Before
     public void setUp(){
-        library = new Library();
+        library = new Library(2);
     }
 
     @Test
     public void libraryStartsEmpty(){
         assertEquals(0, library.bookCount());
     }
+
+    @Test
+    public void booksCanBeAddedToLibrary(){
+        library.addBook("High Fidelity", "Nick Hornby", "Fiction");
+        assertEquals(1, library.bookCount());
+    }
+
+    @Test
+    public void libraryHasCapacity(){
+        assertEquals(2, library.getCapacity());
+    }
+
 }
