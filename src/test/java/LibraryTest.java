@@ -6,10 +6,12 @@ import static org.junit.Assert.assertEquals;
 public class LibraryTest {
 
     private Library library;
+    private Borrower borrower;
 
     @Before
     public void setUp(){
         library = new Library(2);
+        borrower = new Borrower("Andy");
     }
 
     @Test
@@ -36,4 +38,13 @@ public class LibraryTest {
         assertEquals(2, library.getCapacity());
     }
 
+    @Test
+    public void borrowerCanBorrowBook(){
+        library.addBook("High Fidelity", "Nick Hornby", "Fiction");
+        library.addBook("1984", "George Orwell", "Science Fiction");
+        assertEquals(2, library.bookCount());
+        borrower.borrowBook(library);
+        assertEquals(1, library.bookCount());
+        assertEquals(1, borrower.borrowedBookCount());
+    }
 }
