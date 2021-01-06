@@ -16,10 +16,16 @@ public class Library {
 
     public void addBook(String title, String author, String genre){
         Book newBook = new Book(title, author, genre);
-        this.bookList.add(newBook);
+        if (!checkIfStockFull()){
+            this.bookList.add(newBook);
+        }
     }
 
     public int getCapacity() {
         return this.capacity;
+    }
+
+    public boolean checkIfStockFull() {
+        return this.capacity == bookCount();
     }
 }

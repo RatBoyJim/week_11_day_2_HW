@@ -18,9 +18,17 @@ public class LibraryTest {
     }
 
     @Test
-    public void booksCanBeAddedToLibrary(){
+    public void bookCanBeAddedToLibrary(){
         library.addBook("High Fidelity", "Nick Hornby", "Fiction");
         assertEquals(1, library.bookCount());
+    }
+
+    @Test
+    public void bookCannotBeAddedToLibrary(){
+        library.addBook("High Fidelity", "Nick Hornby", "Fiction");
+        library.addBook("1984", "George Orwell", "Science Fiction");
+        library.addBook("Inferno", "Dante Alighieri", "Poetry");
+        assertEquals(2, library.bookCount());
     }
 
     @Test
